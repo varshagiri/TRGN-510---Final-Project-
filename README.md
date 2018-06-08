@@ -3,79 +3,80 @@
 
 #### 1. Downloading appropriate data
 - Find the appropriate PGP person with fasta/fastq file and download it to the local directory.
+
 `
-download huA2629E
+  download huA2629E
 `
 
 - Transfer the data from local directory to the server using SFTP
 1. Log in to ssh and enter password to test access
 
 ` 
-ssh varshagi@itg.usc.edu
+   ssh varshagi@itg.usc.edu
 `
 
 2. Log out once it works
 
-`exit
+`. exit
 `
 
 3. Open an SFTP using the same server connection 
 
 `
-sftp varshagi@itg.usc.edu
+   sftp varshagi@itg.usc.edu
 `
 
 4. Once connection is established, get the path of the remote directory
 
 `
-pwd
+   pwd
 `
 
 5. Check for contents of the directory
 
 `
-ls
+   ls
 `
 
 6. Create a directory to transfer the data into
 
 `
-cd Alz
+   cd Alz
 `
 
 7. Get path of local directory
 
 `
-lpwd
+   lpwd
 `
 
 8. Check contents of local directory
 
 `
-lls
+   lls
 `
 
 9. Download file to the working directory 
 
 `
-put localFile
+   put localFile
 `
 
 10. Verify if file got transferred 
 
-`ssh varshagi@itg.usc.edu`
+`.  ssh varshagi@itg.usc.edu`
 
-`ls`
+`.  ls`
 
-`cd Alz`
+`.  cd Alz`
 
-`ls`
+`.  ls`
 
 Result: \home\varsha\Alz should contain the fastq file
 
 11. Exit the server
 
-`exit`
+`.  exit`
 
 
 
