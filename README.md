@@ -72,7 +72,7 @@
 
 `ls`
 
-Result: '\home\varsha\Alz' should contain the fastq file
+Result: '/home/varsha/Alz' should contain the fastq file
 
 11. Exit the server
 
