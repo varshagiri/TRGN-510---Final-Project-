@@ -17,7 +17,7 @@
 
 2. Log out once it works
 
-`. exit
+`exit
 `
 
 3. Open an SFTP using the same server connection 
@@ -64,19 +64,19 @@
 
 10. Verify if file got transferred 
 
-`.  ssh varshagi@itg.usc.edu`
+`ssh varshagi@itg.usc.edu`
 
-`.  ls`
+`ls`
 
-`.  cd Alz`
+`cd Alz`
 
-`.  ls`
+`ls`
 
 Result: \home\varsha\Alz should contain the fastq file
 
 11. Exit the server
 
-`.  exit`
+` exit`
 
 
 
