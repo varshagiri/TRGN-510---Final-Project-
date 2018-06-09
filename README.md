@@ -1,16 +1,17 @@
 # TRGN-510---Final-Project-
-###### Analysis of a PGP person and building a pipeline using R to assess the variants in the gene of that person.
+###### Analysis of a PGP person using germline variant calling
 
 #### 1. Downloading appropriate data
 - Find the appropriate PGP person with fasta/fastq file and download it to the local directory.
 
-`
-  download huA2629E
-`
+1. Use https://pgp.med.harvard.edu/data/
+2. Navigate to https://my.pgp-hms.org/public_genetic_data and find participant huA2629E.
+3. Dowload two fastq files (read1 and read2) of huA2629E.
+
+Now the data should have downloaded into the local working directory.
 
 - Transfer the data from local directory to the server using SFTP
 1. Log in to ssh and enter password to test access
-
 ` 
    ssh varshagi@itg.usc.edu
 `
@@ -44,13 +45,13 @@
    cd Alz
 `
 
-7. Get path of local directory
+7. Get path of local working directory
 
 `
    lpwd
 `
 
-8. Check contents of local directory
+8. Check contents of local working directory and make sure where the downloaded files are 
 
 `
    lls
@@ -59,10 +60,10 @@
 9. Download file to the working directory 
 
 `
-   put localFile
+   put localFile (this is to be replaced by the filename) 
 `
 
-10. Verify if file got transferred 
+10. Verify transfer of file 
 
 `ssh varshagi@itg.usc.edu`
 
@@ -72,7 +73,7 @@
 
 `ls`
 
-Result: '/home/varsha/Alz' should contain the fastq file
+Result: '/home/varsha/Alz' should contain the fastq files
 
 11. Exit the server
 
