@@ -8,13 +8,13 @@ The aim of this project is to analyze the data of a PGP person using gremlin var
 
 
 #### 1. Downloading appropriate data
-- Find the appropriate PGP person with fasta/fastq file and download it to the local directory.
+- Find the appropriate PGP person with fasta/fastq file and download it to the local directory 
 
-1. Use https://pgp.med.harvard.edu/data/
-2. Navigate to https://my.pgp-hms.org/public_genetic_data and find participant huA2629E.
-3. Dowload two fastq files (read1 and read2) of huA2629E.
+1. Use links https://my.pgp-hms.org/user_file/download/2810 and https://my.pgp-hms.org/user_file/download/2811 to download read 1 and read 2 respectively. 
 
 Now the data should have downloaded into the local working directory.
+
+(Data is obtained from The Harvard Personal Genome Project. Reference link: https://pgp.med.harvard.edu) 
 
 - Transfer the data from local directory to the server using SFTP
 1. Log in to ssh and enter password to test access
@@ -77,7 +77,7 @@ Now the data should have downloaded into the local working directory.
 
 `cd Alz`
 
-`ls`
+`ls -sh` (Checks for filesize of the two fastq files)
 
 Result: '/home/varsha/Alz' should contain the fastq files
 
