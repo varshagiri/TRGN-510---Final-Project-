@@ -7,7 +7,7 @@
 The aim of this project is to analyze the data of a PGP person using gremlin variant calling. I will first obtain appropriate data from the Harvard PGP database. Next, the fastq data is going to be aligned with a reference genome using BWA software to reproduce the germline variance between the two sequences. The identified result is saved in SAM format and the same is converted into BAM for easier manipulation. Only the anomalies between two sequences are further filtered out using SNPeff and the output will be in VCF. Finally, a front end view will be created using R programming.  
 
 
-#### 1. Downloading appropriate data
+#### 1) Downloading appropriate data
 - Find the appropriate PGP person with fasta/fastq file and download it to the local directory 
 
 1. Use links https://my.pgp-hms.org/user_file/download/2810 and https://my.pgp-hms.org/user_file/download/2811 to download read 1 and read 2 respectively. 
@@ -85,7 +85,9 @@ Result: '/home/varsha/Alz' should contain the fastq files
 
 ` exit`
 
+#### 2) Installing BWA and Samtools
 
+#### 3) Downloading refernce genome 
 
 
 
