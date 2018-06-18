@@ -145,8 +145,8 @@ Note: To use BWA, you need to first index the genome with `bwa index'.
    ` bunzip2 samtools-1.7.tar.bz2 `
    
    `  tar -xvf samtools-1.7.tar `
-     
-    Navigate to directory
+   
+   Navigate to working directory
    
    ` cd samtools-1.7 `
    
@@ -216,6 +216,7 @@ Creating an alignemnt script
 Script within build_bwa_align:
 
 ` #!/bin/bash
+`
 
 
 
