@@ -87,7 +87,137 @@ Result: '/home/varsha/Alz' should contain the fastq files
 
 #### 2) Installing BWA and Samtools
 
-#### 3) Downloading refernce genome 
+#### BWA Installation instructions
+
+` mkdir ~/bin/bwa_build 
+
+  cd ~/bin/bwa_build 
+  
+  git clone https://github.com/lh3/bwa.git
+  
+  cd bwa
+  
+  make`
+  
+  To verify its function:
+
+` ~/bin/bwa_build/bwa/bwa `
+
+Result: `Program: bwa (alignment via Burrows-Wheeler transformation)
+Version: 0.7.17-r1188
+Contact: Heng Li <lh3@sanger.ac.uk>
+
+Usage: bwa <command> [options]
+
+Command: index index sequences in the FASTA format
+ mem BWA-MEM algorithm
+ fastmap identify super-maximal exact matches
+ pemerge merge overlapping paired ends (EXPERIMENTAL)
+ aln gapped/ungapped alignment
+ samse generate alignment (single ended)
+ sampe generate alignment (paired ended)
+ bwasw BWA-SW for long queries
+
+shm manage indices in shared memory
+ fa2pac convert FASTA to PAC format
+ pac2bwt generate BWT from PAC
+ pac2bwtgen alternative algorithm for generating BWT
+ bwtupdate update .bwt to the new format
+ bwt2sa generate SA from BWT and Occ
+
+Note: To use BWA, you need to first index the genome with `bwa index'.
+ There are three alignment algorithms in BWA: `mem', `bwasw', and
+ `aln/samse/sampe'. If you are not sure which to use, try `bwa mem'
+ first. Please `man ./bwa.1' for the manual. `
+ 
+ #### Samtools Installion instructions:
+ 
+ ` mkdir ~/bin/samtools_build
+ 
+   cd ~/bin/samtools_build `
+   
+   Download data
+   
+   ` wget https://github.com/samtools/samtools/releases/download/1.7/samtools-1.7.tar.bz2 ` 
+   
+   Unzip and untar data respectively 
+   
+   ` bunzip2 samtools-1.7.tar.bz2 `
+   
+   `  tar -xvf samtools-1.7.tar `
+     
+    Navigate to directory
+   
+   ` cd samtools-1.7 `
+   
+   Configuring the script
+   
+   `./configure`
+   
+   Incase of error in compilation
+   
+   `./configure --without-curses`
+   
+   To make the compiled program in the local directory
+   
+   `make DESTDIR=~/bin/samtools_build/samtools-1.7` 
+   
+   Verify compilation status in the working directory
+   
+   `./samtools`
+   
+   Verify BWA and Samtools exist in the server 
+   
+   ` cd ~
+   samtools` checkes for samtools
+   `bwa ` checks for bwa 
+   
+
+#### 3) Downloading refernce genome data 
+
+` mkdir ~/bin/refgen
+  cd refgen
+  wget -r ftp://gsapubftp-anonymous@ftp.broadinstitute.org/bundle/b37/human_g1k_v37.fasta.fai.gz
+  wget ftp://gsapubftp-anonymous@ftp.broadinstitute.org/bundle/b37/human_g1k_v37.fasta.gz`
+  
+  Build an index to make data search faster 
+  
+  ` mkdir ~/scripts
+    cd ~/scripts 
+    vim ~/scripts/build_bwa_index.sh 
+    `
+  Contents within build_bwa_index.sh
+  
+  ` #!/bin/bash
+DATADIR="/refgen"
+mkdir -p ${DATADIR}
+######################################### #  
+#Running Analysis 
+######################################### 
+echo Running Analysis echo Path is `pwd`
+cd ${DATADIR}
+bwa index ${DATADIR}/human_g1k_v37.fasta.gz
+`
+
+Change permission
+
+` chmod 755~/scripts/build_bwa_index.sh `
+
+Run in background 
+
+` nohup ~/scripts/build_bwa_index.sh >& ~/scripts/build_bwa_index.out & `
+
+#### 4) Alignment from Fastqs to BAMs
+
+Creating an alignemnt script 
+
+` vim ~/scripts/build_bwa_align.sh `
+
+Script within build_bwa_align:
+
+` #!/bin/bash
+
+
 
 
 
