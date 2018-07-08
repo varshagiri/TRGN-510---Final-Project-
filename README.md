@@ -246,16 +246,16 @@ The most important risk factor for Alzheimer’s disease is a gene called Apolip
 Chromosome number and position of both rs429358 and rs7412 can be obtained from     https://www.ncbi.nlm.nih.gov/snp/rs429358#variant_details and https://www.ncbi.nlm.nih.gov/snp/rs7412#variant_details respectively:
 
 rs429358: Primary locus 
-          [GRCh37]chr19:45411941
+[GRCh37]chr19:45411941
           
-          Alternate locus 
-          NP_000032.1:p.C130R
+Alternate locus 
+NP_000032.1:p.C130R
 
 rs7412: Primary locus 
-        [GRCh37]chr19:45412079
+[GRCh37]chr19:45412079
         
-        Alternate locus 
-        NP_000032.1:p.R176C
+ Alternate locus 
+ NP_000032.1:p.R176C
 
 The above information can be grepped out from our VCF file. 
 
