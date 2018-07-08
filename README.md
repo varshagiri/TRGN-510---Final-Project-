@@ -254,7 +254,7 @@ NP_000032.1:p.C130R
 rs7412: Primary locus 
 [GRCh37]chr19:45412079
         
- Alternate locus 
+ Alternate locus
  NP_000032.1:p.R176C
 
 The above information can be grepped out from our VCF file. 
