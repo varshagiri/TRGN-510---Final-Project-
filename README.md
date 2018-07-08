@@ -87,6 +87,7 @@ To verify its function:
 If BWA has compiled successfully, the following should be seen:
 
 `
+
 Program: bwa (alignment via Burrows-Wheeler transformation)
 Version: 0.7.17-r1188
 Contact: Heng Li <lh3@sanger.ac.uk>
@@ -113,6 +114,7 @@ Note: To use BWA, you need to first index the genome with `bwa index'.
  There are three alignment algorithms in BWA: `mem', `bwasw', and
  `aln/samse/sampe'. If you are not sure which to use, try `bwa mem'
  first. Please `man ./bwa.1' for the manual.
+ 
  `
  
 B. Samtools
@@ -190,10 +192,10 @@ Create an alignemnt script:
 bwa_align.sh
 
 `
+
 #!/bin/bash
  mkdir -p /home/varshagi/scripts/bams
  cd /home/varshagi/scripts/bams/
-
  bwa mem /home/varshagi/refgen/human_g1k_v37.fasta /home/varshagi/Alz/NIST7035_TAAGGCGA_L001_R1_001.fastq    /home/varshagi/Alz/NIST7035_TAAGGCGA_L001_R2_001.fastq >>/home/varshagi/scripts/bams/sample1.sam 2>>error.align1
  bwa mem /home/varshagi/refgen/human_g1k_v37.fasta /home/varshagi/Alz/NIST7035_TAAGGCGA_L002_R1_001.fastq /home/varshagi/Alz/NIST7035_TAAGGCGA_L002_R2_001.fastq >>/home/varshagi/scripts/bams/sample2.sam 2>>error.align2
  samtools fixmate -O bam sample1.sam sample1.bam >& fix.thread1.log
@@ -206,6 +208,7 @@ bwa_align.sh
  samtools merge sample.merge.bam sample1.sort.bam sample2.sort.bam >& merge.log
  samtools index sample.merge.bam >& index.log
  rm *.sort.bam *.sam sample1.bam sample2.bam
+ 
  `
  
  Make the file executable: 
