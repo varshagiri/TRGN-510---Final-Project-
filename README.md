@@ -163,16 +163,14 @@ B. Samtools
  
  build_bwa_index.sh
   
-`
-#!/bin/bash
+`#!/bin/bash
  mkdir -p /home/varshagi/refgen/
  ######################################### #
  #Running Analysis
  #########################################
  echo Running Analysis echo Path is `pwd`
  cd /home/varshagi/refgen/
- bwa index /home/varshagi/refgen/human_g1k_v37.fasta
- `
+ bwa index /home/varshagi/refgen/human_g1k_v37.fasta`
 
 Make the file executable:
 
@@ -191,9 +189,7 @@ Create an alignemnt script:
 
 bwa_align.sh
 
-`
-
-#!/bin/bash
+`#!/bin/bash
  mkdir -p /home/varshagi/scripts/bams
  cd /home/varshagi/scripts/bams/
  bwa mem /home/varshagi/refgen/human_g1k_v37.fasta /home/varshagi/Alz/NIST7035_TAAGGCGA_L001_R1_001.fastq    /home/varshagi/Alz/NIST7035_TAAGGCGA_L001_R2_001.fastq >>/home/varshagi/scripts/bams/sample1.sam 2>>error.align1
@@ -207,9 +203,7 @@ bwa_align.sh
  wait
  samtools merge sample.merge.bam sample1.sort.bam sample2.sort.bam >& merge.log
  samtools index sample.merge.bam >& index.log
- rm *.sort.bam *.sam sample1.bam sample2.bam
- 
- `
+ rm *.sort.bam *.sam sample1.bam sample2.bam`
  
  Make the file executable: 
  
@@ -241,7 +235,9 @@ Check if freebayes works:
 Check if the file has data:
 
 `cd /home/varshagi/scripts/bams/`
+
 `ls`
+
 `ls -lh sample.freebayes.vcf`
 
 #### 5)Deducing results
