@@ -63,7 +63,7 @@ Check file sizes:
 `ls -lh human_g1k_v37.fasta`
 
 
-#### 2) Installing BWA and Samtools
+#### 3)Installing BWA and Samtools
 
 Create a directory to contain all the scripts for this project: 
 
@@ -153,7 +153,7 @@ B. Samtools
  `samtools` checkes for samtools
  `bwa ` checks for bwa 
   
- #### 4) Build an index to make data search faster 
+ #### 4)Build an index to make data search faster 
   
 `cd /home/varshagi/scripts 
  vim /home/varshagi/scripts/build_bwa_index.sh`
@@ -178,7 +178,7 @@ Run in background
 `nohup /home/varshagi/scripts/build_bwa_index.sh >& ~/scripts/build_bwa_index.out &`
  `disown`
 
-#### 4) Alignment from Fastqs to BAMs
+#### 5)Alignment from Fastqs to BAMs
 
 Create an alignemnt script: 
 
@@ -215,7 +215,7 @@ bwa_align.sh
  
  (Note: Always check errors files like *error.align1*,*error.align2*, etc. incase the result does not show up)
 
-#### 5)Obtaining VCFs from BAMs using freebayes
+#### 6)Obtaining VCFs from BAMs using freebayes
 
 Install freebayes:
 
@@ -239,7 +239,30 @@ Check if the file has data:
 
 `ls -lh sample.freebayes.vcf`
 
-#### 5)Deducing results
+#### 7)Deducing results
+
+The most important risk factor for Alzheimer’s disease is a gene called Apolipoprotein E (APOE). The different alleles among which - ε2 and ε3 protect against Alzheimer’s; ε4 increases the risk of developing it. Therefore, allele combination ε4/ε4 has the highest risk of a person developing AD. There are two genetic variants - rs429358 and rs7412 associated with AD. By determining an individual's APOE genotype at these variants, the risk factor can be determined. 
+
+Chromosome number and position of both rs429358 and rs7412 can be obtained from     https://www.ncbi.nlm.nih.gov/snp/rs429358#variant_details and https://www.ncbi.nlm.nih.gov/snp/rs7412#variant_details respectively:
+
+rs429358: Primary locus 
+          [GRCh37]chr19:45411941
+          
+          Alternate locus 
+          NP_000032.1:p.C130R
+
+rs7412: Primary locus 
+        [GRCh37]chr19:45412079
+        
+        Alternate locus 
+        NP_000032.1:p.R176C
+
+The above information can be grepped out from our VCF file. 
+
+
+`grep 
+
+
 
 
 
