@@ -15,23 +15,23 @@ The aim of this project is to analyze the data of a PGP person using gremlin var
 
 A. Downloading patient data
 
-Create a directory to store the data 
+Create a directory to store the data: 
 
 `mkdir /home/varshagi/Alz`
 
 `cd Alz`
 
-Download the data into this directory 
+Download the data into this directory: 
 
 ` wget ftp://ftp-trace.ncbi.nih.gov/giab/ftp/data/NA12878/Garvan_NA12878_HG001_HiSeq_Exome/NIST7035_TAAGGCGA_L001_R1_001.fastq.gz `
 
 `wget ftp://ftp-trace.ncbi.nih.gov/giab/ftp/data/NA12878/Garvan_NA12878_HG001_HiSeq_Exome/NIST7035_TAAGGCGA_L001_R2_001.fastq.gz`
 
-Unzip the files
+Unzip the files:
 
 `gunzip NIST7035_TAAGGCGA_L001_R1_001.fastq.gz NIST7035_TAAGGCGA_L001_R2_001.fastq.gz NIST7035_TAAGGCGA_L002_R1_001.fastq.gz NIST7035_TAAGGCGA_L002_R2_001.fastq.gz`
 
-Confirm the presence of these files
+Confirm the presence of these files:
 
 `ls`
 
@@ -40,23 +40,23 @@ Confirm the presence of these files
 
 B. Downloading reference data 
 
-Create a directory 
+Create a directory: 
 
 `mkdir /home/varshagi/refgen`
 
 `cd refgen`
 
-Download data into refgen
+Download data into refgen:
 
 `wget ftp://ftp.ncbi.nlm.nih.gov/1000genomes/ftp/technical/reference/human_g1k_v37.fasta.fai`
 
 `wget ftp://ftp.ncbi.nlm.nih.gov/1000genomes/ftp/technical/reference/human_g1k_v37.fasta.gz`
 
-Unzip file
+Unzip file:
 
 `gunzip human_g1k_v37.fasta`
 
-Check file sizes
+Check file sizes:
 
 `ls`
 
@@ -65,7 +65,7 @@ Check file sizes
 
 #### 2) Installing BWA and Samtools
 
-Create a directory to contain all the scripts for this project 
+Create a directory to contain all the scripts for this project: 
 
 `mkdir /home/varshagi/scripts`
 
@@ -81,9 +81,11 @@ A. BWA
  make `
  
 To verify its function:
+
 `/home/varshagi/bwa_build/bwa/bwa `
 
 If BWA has compiled successfully, the following should be seen:
+
 `Program: bwa (alignment via Burrows-Wheeler transformation)
 Version: 0.7.17-r1188
 Contact: Heng Li <lh3@sanger.ac.uk>
@@ -109,7 +111,7 @@ shm manage indices in shared memory
 Note: To use BWA, you need to first index the genome with `bwa index'.
  There are three alignment algorithms in BWA: `mem', `bwasw', and
  `aln/samse/sampe'. If you are not sure which to use, try `bwa mem'
- first. Please `man ./bwa.1' for the manual. `
+ first. Please `man ./bwa.1' for the manual.`
  
 B. Samtools
  
@@ -119,16 +121,16 @@ B. Samtools
 
 `wget https://github.com/samtools/samtools/releases/download/1.7/samtools-1.7.tar.bz2 ` 
    
- Unzip and untar data respectively 
+ Unzip and untar data respectively: 
    
  `bunzip2 samtools-1.7.tar.bz2 
   tar -xvf samtools-1.7.tar`
    
- Navigate to working directory
+ Navigate to working directory:
    
- `cd samtools-1.7 `
+ `cd samtools-1.7`
    
- Configure the script
+ Configure the script:
    
  `./configure`
    
@@ -136,15 +138,15 @@ B. Samtools
    
  `./configure --without-curses`
    
- To make the compiled program in the local directory
+ To make the compiled program in the local directory:
    
  `make DESTDIR=~/bin/samtools_build/samtools-1.7` 
    
- Verify compilation status in the working directory
+ Verify compilation status in the working directory:
    
  `./samtools`
    
- Verify BWA and Samtools exist in the server 
+ Verify BWA and Samtools exist in the server: 
    
  `cd ~`
  `samtools` checkes for samtools
@@ -166,7 +168,7 @@ B. Samtools
  cd /home/varshagi/refgen/
  bwa index /home/varshagi/refgen/human_g1k_v37.fasta`
 
-Make the file executable
+Make the file executable:
 
 `chmod 755 /home/varshagi/scripts/build_bwa_index.sh`
 
@@ -177,7 +179,7 @@ Run in background
 
 #### 4) Alignment from Fastqs to BAMs
 
-Create an alignemnt script 
+Create an alignemnt script: 
 
 `vim /home/varshagi/scripts/bwa_align.sh`
 
@@ -200,11 +202,11 @@ bwa_align.sh
  samtools index sample.merge.bam >& index.log
  rm *.sort.bam *.sam sample1.bam sample2.bam`
  
- Make the file executable 
+ Make the file executable: 
  
  `chmod 755 /home/varshagi/scripts/bwa_align.sh`
  
- Run the script
+ Run the script:
  
  `~/scripts/bwa_align.sh  >&~/scripts/bwa_align.out &`
  `disown`
@@ -215,19 +217,19 @@ bwa_align.sh
 
 #### 5)Obtaining VCFs from BAMs using freebayes
 
-Install freebayes
+Install freebayes:
 
 `cd ~`
 `git clone --recursive git://github.com/ekg/freebayes.git`
 `make`
 
-Check if freebayes works
+Check if freebayes works:
 
 `freebayes`
 
 `freebayes -f /home/varshagi/refgen/human_g1k_v37.fasta /home/varshagi/scripts/bams/sample.merge.bam > /home/varshagi/scripts/bams/sample.freebayes.vcf >& log&`
 
-Check if the file has data
+Check if the file has data:
 
 `cd /home/varshagi/scripts/bams/`
 `ls`
