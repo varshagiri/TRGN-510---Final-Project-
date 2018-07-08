@@ -2,7 +2,7 @@
 
 
 
-###### Analysis of a PGP person using germline variant calling
+#### Analysis of a PGP person using germline variant calling
 
 The aim of this project is to analyze the data of a PGP person using gremlin variant calling. I will first obtain appropriate data from the Harvard PGP database. Next, the fastq data is going to be aligned with a reference genome using BWA software to reproduce the germline variance between the two sequences. The identified result is saved in SAM format and the same is converted into BAM for easier manipulation. Only the anomalies between two sequences are further filtered out using SNPeff and the output will be in VCF. Finally, a front end view will be created using R programming.  
 
