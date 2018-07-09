@@ -260,7 +260,8 @@ rs7412: Primary locus
 The above information can be grepped out from our VCF file. 
 
 
-`grep 
+`grep 45411941 sample.freebayes.vcf`
+
 
 
 
