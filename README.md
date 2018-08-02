@@ -241,26 +241,36 @@ Check if the file has data:
 
 #### 7)Deducing results
 
-The most important risk factor for Alzheimer’s disease is a gene called Apolipoprotein E (APOE). The different alleles among which - ε2 and ε3 protect against Alzheimer’s; ε4 increases the risk of developing it. Therefore, allele combination ε4/ε4 has the highest risk of a person developing AD. There are two genetic variants - rs429358 and rs7412 associated with AD. By determining an individual's APOE genotype at these variants, the risk factor can be determined. 
+The important risk factor for Alzheimer’s disease is a gene called Apolipoprotein E (APOE). There are three types of APOE genes - APOE2, APOE3 and APOE4. Everyone has two copies of the gene and the combination will determine the APOE genotype - e2/e2, e2/e3, e2/e4, e3/e3, e3/e4, or e4/e4. 
 
-Chromosome number and position of both rs429358 and rs7412 can be obtained from     https://www.ncbi.nlm.nih.gov/snp/rs429358#variant_details and https://www.ncbi.nlm.nih.gov/snp/rs7412#variant_details respectively:
+APOE2 has been known to be the rarest form of APOE. It is also said that carrying even one copy of APOE2 reduces risk of Alzheimer's by 40%.  
+
+APOE3 is the most common allele and does not influence the Alzheimer's risk.
+
+APOE4 increases the risk of Alzheimer's diseases. Having only one copy of e4 increases the risk by 2-3 times; while having two e4 alleles increases risk by 12 times.
+
+The APOE alleles are defined by two genetic variants in the gene, rs429358 and rs7412. Chromosome number and position of both rs429358 and rs7412 can be obtained from https://www.ncbi.nlm.nih.gov/snp/rs429358#variant_details and https://www.ncbi.nlm.nih.gov/snp/rs7412#variant_details respectively: 
 
 rs429358: Primary locus 
 [GRCh37]chr19:45411941
-          
-Alternate locus 
-NP_000032.1:p.C130R
 
 rs7412: Primary locus 
 [GRCh37]chr19:45412079
-        
- Alternate locus
- NP_000032.1:p.R176C
 
 The above information can be grepped out from our VCF file. 
 
+`grep 45411941 sample.freebayes.vcf` 
+`grep 45412079 sample.freebayes.vcf`
 
-`grep 45411941 sample.freebayes.vcf`
+The obtained result can be interpreted as one of these conditions:
+
+A) APOE3-e3(rs7412-C;rs429358-T) =  It is considered the neutral APOE genotype
+B) APOE4-e4(rs7412-C;rs429358-C) =  Highest risk of developing Alzheimer's disease
+
+
+
+
+
 
 
 
