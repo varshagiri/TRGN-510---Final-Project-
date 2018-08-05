@@ -4,7 +4,7 @@
 
 #### Analysis of a PGP person using germline variant calling
 
-The aim of this project is to analyze the data of a PGP person using gremlin variant calling. I will first obtain appropriate data from the Harvard PGP database. Next, the fastq data is going to be aligned with a reference genome using BWA software to reproduce the germline variance between the two sequences. The identified result is saved in SAM format and the same is converted into BAM for easier manipulation. Only the anomalies between two sequences are further filtered out using SNPeff and the output will be in VCF. Finally, a front end view will be created using R programming.  
+The aim of this project is to analyze the data of a PGP person using gremline variant calling. I will first obtain appropriate data from the Harvard PGP database. Next, the fastq data is going to be aligned with a reference genome using BWA software to reproduce the germline variance between the two sequences. The identified result is saved in SAM format and the same is converted into BAM for easier manipulation. Only the anomalies between two sequences are further filtered out using SNPeff and the output will be in VCF. Finally, a front end view will be created using R programming.  
 
 
 #### 1)Log onto server 
@@ -247,7 +247,7 @@ APOE2 has been known to be the rarest form of APOE. It is also said that carryin
 
 APOE3 is the most common allele and does not influence the Alzheimer's risk.
 
-APOE4 increases the risk of Alzheimer's diseases. Having only one copy of e4 increases the risk by 2-3 times; while having two e4 alleles increases risk by 12 times.
+APOE4 increases the risk of Alzheimer's disease. Having only one copy of e4 increases the risk by 2-3 times; while having two e4 alleles increases risk by 12 times.
 
 The APOE alleles are defined by two genetic variants in the gene, rs429358 and rs7412. Chromosome number and position of both rs429358 and rs7412 can be obtained from https://www.ncbi.nlm.nih.gov/snp/rs429358#variant_details and https://www.ncbi.nlm.nih.gov/snp/rs7412#variant_details respectively: 
 
