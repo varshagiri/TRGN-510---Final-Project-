@@ -264,10 +264,10 @@ The above information can be grepped out from our VCF file.
 
 The obtained result can be interpreted as one of these conditions:
 
-A) APOE3-e3(rs7412-C;rs429358-T) =  It is considered the neutral APOE genotype
-B) APOE4-e4(rs7412-C;rs429358-C) =  Highest risk of developing Alzheimer's disease 
+A) APOE-e3(rs7412-C;rs429358-T) =  It is considered the neutral APOE genotype
+B) APOE-e4(rs7412-C;rs429358-C) =  Highest risk of developing Alzheimer's disease 
 
-The person whose genome was analyzed has the APOE genotype APOe3-e3 (rs429358 T;T ; rs7412 C;C) and hence does not genetically have a high risk of developing Alzheimer's disease.
+The person whose genome was analyzed has the APOE genotype APOE-e3/e3 (rs429358 T;T ; rs7412 C;C) and hence does not genetically have a high risk of developing Alzheimer's disease.
 
 
 
